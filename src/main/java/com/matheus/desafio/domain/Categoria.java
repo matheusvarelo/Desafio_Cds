@@ -18,17 +18,21 @@ public class Categoria implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
+	private String cpf;
 	
 	public Categoria() {
 	}
-
-	public Categoria(Integer id, String nome) {
+	
+	public Categoria(Integer id, String nome, String cpf) {
 		super();
 		this.id = id;
 		this.nome = nome;
+		this.cpf = cpf;
 	}
 
+
 	public Integer getId() {
+	
 		return id;
 	}
 
@@ -67,6 +71,14 @@ public class Categoria implements Serializable {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 	
 	
